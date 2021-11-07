@@ -37,13 +37,14 @@ export default function Appointment({ id, time, interview, interviewers, bookInt
       .then(() => {
         transition(SHOW)
       })
-      .catch(() => {
+      .catch((e) => {
+        console.log("e:", e)
         transition(ERROR_SAVE, true)
       })
   }
 
   function cancel() {
-    const interview = null
+    // const interview = null
 
     transition(DELETING)
 
@@ -51,7 +52,8 @@ export default function Appointment({ id, time, interview, interviewers, bookInt
     .then(() => {
       transition(EMPTY)
     })
-    .catch(() => {
+    .catch((e) => {
+      console.log("e:", e)
       transition(ERROR_DELETE, true)
     })
 
