@@ -50,8 +50,36 @@ npm run storybook
 ```
 
 ## Project Stack
-Front-End: > React, Axios, JSX, HTML, SASS, JavaScript
+Front-End: 
+> React, Axios, JSX, HTML, SASS, JavaScript
 
-Back-End: > Express, Node.js, PostgreSQL
+Back-End: 
+> Express, Node.js, PostgreSQL
 
-Testing: > Storybook, Webpack Dev Server, Jest, Testing Library and Cypress
+Testing: 
+> Storybook, Webpack Dev Server, Jest, Testing Library and Cypress
+
+## Dependencies 
+```
+Axios
+Babel
+Babel-loader
+Bootstrap
+Classname
+Node-sass
+Normalize.css
+Prop-types
+React
+React-bootstrap
+React-dom
+React-scripts
+React-test-renderer
+Storybook/addon-actions
+Storybook/addon-backgrounds
+Storybook/addon-links
+Storybook/addons
+Storybook/react
+Testing-library/jest-dom
+Testing-library/react
+Testing-library/react-hooks
+```
