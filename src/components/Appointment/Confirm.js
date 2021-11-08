@@ -1,8 +1,10 @@
 import React from "react";
-// import Button from 'react-bootstrap/Button'
 import Button from 'components/Button'
 
 export default function Confirm({message, onConfirm, onCancel}) {
+  // Before deleting, confirmation required before API request
+  // Once confirmed (user clicks on "confirm"), then will update mode to "deleting", 
+  // and then update mode to "empty"
 
   return <main className="appointment__card appointment__card--confirm">
   <h1 className="text--semi-bold">{message}</h1>

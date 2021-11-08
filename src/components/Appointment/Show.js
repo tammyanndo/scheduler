@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Show({student, interviewer, onEdit, onDelete}) {
-  // const {student, interviewer, onEdit, onDelete } = props
+  // When an interview is booked, "show" is the mode
   return (
     <main className="appointment__card appointment__card--show">
   <section className="appointment__card-left">

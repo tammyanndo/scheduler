@@ -37,40 +37,33 @@ export default function Appointment({ id, time, interview, interviewers, bookInt
       .then(() => {
         transition(SHOW)
       })
-      .catch((e) => {
-        console.log("e:", e)
+      .catch(() => {
         transition(ERROR_SAVE, true)
       })
   }
 
   function cancel() {
-    // const interview = null
 
     transition(DELETING)
 
     cancelInterview(id)
-    .then(() => {
-      transition(EMPTY)
-    })
-    .catch((e) => {
-      console.log("e:", e)
-      transition(ERROR_DELETE, true)
-    })
+      .then(() => {
+        transition(EMPTY)
+      })
+      .catch((e) => {
+        console.log("e:", e)
+        transition(ERROR_DELETE, true)
+      })
 
   }
 
-
-  
   return (
     <article className="appointment">
       <Header time={time} />
-      {mode === SHOW && <Show student={interview.student} interviewer={interview.interviewer.name} onEdit={() => transition(EDIT)} onDelete={() => transition(CONFIRM)}/>}
-      {/* interviewer comes from state (when useEffect is called, state changes from initial state to have all of the api data) */}
-      {/* interviewer id from interview can now be used to access interviewer data  */}
-      {/* whatever is in <Show /> becomes available to be used in show.js */}
+      {mode === SHOW && <Show student={interview.student} interviewer={interview.interviewer.name} onEdit={() => transition(EDIT)} onDelete={() => transition(CONFIRM)} />}
       {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
       {mode === CREATE && <Form interviewers={interviewers} onSave={save} onCancel={back} />}
-      {mode === SAVING && <Status message={ "SAVING" } />}
+      {mode === SAVING && <Status message={"SAVING"} />}
       {mode === CONFIRM && <Confirm message={'Are you sure you want to delete?'} onCancel={back} onConfirm={cancel} />}
       {mode === DELETING && <Status message={"DELETING"} />}
       {mode === EDIT && <Form studentName={interview.student} interviewerId={interview.interviewer.id} interviewers={interviewers} onSave={save} onCancel={back} />}

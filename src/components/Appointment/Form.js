@@ -4,25 +4,27 @@ import Button from "components/Button"
 
 export default function Form({ studentName, interviewerId, interviewers, onSave, onCancel }) {
 
+
   const [student, setStudent] = useState(studentName || "");
   const [interviewer, setInterviewer] = useState(interviewerId || null);
   const [error, setError] = useState("");
 
   const reset = () => {
-    setStudent("")
-    setInterviewer(null)
+    setStudent("");
+    setInterviewer(null);
   }
   const cancel = () => {
-    reset()
-    onCancel()
+    reset();
+    onCancel();
   }
+
+  // If the input field is empty, error message will print to screen
 
   function validate() {
     if (student === "") {
       setError("Student name cannot be blank");
       return;
     }
-  
     setError("");
     onSave(student, interviewer);
   }

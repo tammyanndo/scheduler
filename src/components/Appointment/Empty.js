@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function Empty({ onAdd }) {
+  // display when there are no appointment during this time
 
   return (
     <main className="appointment__add">
