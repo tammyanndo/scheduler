@@ -16,15 +16,14 @@ export default function Form({ studentName, interviewerId, interviewers, onSave,
     reset()
     onCancel()
   }
+
   function validate() {
-    console.log("clicked");
-    console.log("student name:", student);
     if (student === "") {
       setError("Student name cannot be blank");
-      console.log("validated")
       return;
     }
-
+  
+    setError("");
     onSave(student, interviewer);
   }
 
