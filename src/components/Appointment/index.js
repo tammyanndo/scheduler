@@ -44,7 +44,7 @@ export default function Appointment({ id, time, interview, interviewers, bookInt
 
   function cancel() {
 
-    transition(DELETING)
+    transition(DELETING, true)
 
     cancelInterview(id)
       .then(() => {
